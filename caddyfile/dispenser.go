@@ -114,11 +114,17 @@ func (d *Dispenser) NextBlock() bool {
 		if !d.Next() {
 			return false
 		}
-		if d.Val() == "}" {
-			d.nesting--
-			return false
+		
+		if d.Val() == "{" {
+			// a new block, we move the cursor back and try new block flow
+			d.cursor--
+		} else {
+			if d.Val() == "}" {
+				d.nesting--
+				return false
+			}
+			return true
 		}
-		return true
 	}
 	if !d.NextArg() { // block must open on same line
 		return false
