@@ -114,7 +114,7 @@ func (d *Dispenser) NextBlock() bool {
 		if !d.Next() {
 			return false
 		}
-		
+
 		if d.Val() == "{" {
 			// a new block, we move the cursor back and try new block flow
 			d.cursor--
