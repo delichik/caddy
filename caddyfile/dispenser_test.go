@@ -200,12 +200,12 @@ func TestDispenser_NextBlock_MakesProgressOrStopsOnEOF(t *testing.T) {
 
 func TestDispenser_NextBlock_MultipleLevelsOfNestedBlocks(t *testing.T) {
 	input := `foobar1 {
-			  	sub1 arg1
-			  	sub2
-			  	sub_foobar1 sub_foobar1_arg {
-					sub3 arg3
-					sub4
-			  	}
+			    sub1 arg1
+			    sub2
+			    sub_foobar1 sub_foobar1_arg {
+			      sub3 arg3
+			      sub4
+			    }
 			  }
 			  foobar2 {
 			  }`
