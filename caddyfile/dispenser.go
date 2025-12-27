@@ -107,8 +107,7 @@ func (d *Dispenser) NextLine() bool {
 // to load the next token as long as it opens a block or
 // is already in a block. It returns true if a token was
 // loaded, or false when the block's closing curly brace
-// was loaded and thus the block ended. Nested blocks are
-// not supported.
+// was loaded and thus the block ended.
 func (d *Dispenser) NextBlock() bool {
 	if d.nesting > 0 {
 		if !d.Next() {
